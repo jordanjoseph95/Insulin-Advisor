@@ -8,6 +8,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Card } from "@/components/ui/card";
 import { Droplets, Utensils, AlertTriangle, ArrowRight } from "lucide-react";
 import { MedicalDisclaimer } from "@/components/medical-disclaimer";
+import { FoodSearch } from "@/components/food-search";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useState } from "react";
 import type { DoseResult } from "@workspace/api-client-react/src/generated/api.schemas";
@@ -166,6 +167,10 @@ export default function HomePage() {
                   )}
                 />
               </Card>
+
+              <div className="px-1">
+                <FoodSearch onApply={(carbs) => form.setValue("carbs", carbs)} />
+              </div>
 
               <Button 
                 type="submit" 

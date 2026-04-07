@@ -14,6 +14,8 @@ tags:
     description: User profile and insulin settings
   - name: calculations
     description: Insulin dose calculations
+  - name: food
+    description: Food database search
 paths:
   /healthz:
     get:
@@ -114,6 +116,35 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/CalculationRecord"
+
+  /food/search:
+    get:
+      operationId: searchFood
+      tags: [food]
+      summary: Search food database
+      description: Search for foods and get carbohydrate information
+      parameters:
+        - in: query
+          name: q
+          required: true
+          schema:
+            type: string
+          description: Food search query
+      responses:
+        "200":
+          description: Food search results
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/FoodItem"
+        "400":
+          description: Missing query
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
 
   /calculations/summary:
     get:
@@ -275,6 +306,29 @@ components:
         - targetBg
         - isCapped
         - createdAt
+
+    FoodItem:
+      type: object
+      properties:
+        name:
+          type: string
+        brand:
+          type: ["string", "null"]
+        carbsPer100g:
+          type: ["number", "null"]
+          description: Carbohydrates per 100g
+        servingSizeG:
+          type: ["number", "null"]
+          description: Common serving size in grams
+        servingSizeLabel:
+          type: ["string", "null"]
+          description: Human-readable serving size label
+      required:
+        - name
+        - brand
+        - carbsPer100g
+        - servingSizeG
+        - servingSizeLabel
 
     CalculationSummary:
       type: object

@@ -104,6 +104,29 @@ export const ListCalculationsResponseItem = zod.object({
 export const ListCalculationsResponse = zod.array(ListCalculationsResponseItem);
 
 /**
+ * Search for foods and get carbohydrate information
+ * @summary Search food database
+ */
+export const SearchFoodQueryParams = zod.object({
+  q: zod.coerce.string().describe("Food search query"),
+});
+
+export const SearchFoodResponseItem = zod.object({
+  name: zod.string(),
+  brand: zod.string().nullable(),
+  carbsPer100g: zod.number().nullable().describe("Carbohydrates per 100g"),
+  servingSizeG: zod
+    .number()
+    .nullable()
+    .describe("Common serving size in grams"),
+  servingSizeLabel: zod
+    .string()
+    .nullable()
+    .describe("Human-readable serving size label"),
+});
+export const SearchFoodResponse = zod.array(SearchFoodResponseItem);
+
+/**
  * Returns aggregated stats about past calculations
  * @summary Get calculation summary stats
  */

@@ -22,9 +22,11 @@ import type {
   CalculationSummary,
   DoseResult,
   ErrorResponse,
+  FoodItem,
   HealthStatus,
   ListCalculationsParams,
   Profile,
+  SearchFoodParams,
   UpdateProfileBody,
 } from "./api.schemas";
 
@@ -451,6 +453,101 @@ export function useListCalculations<
   },
 ): UseQueryResult<TData, TError> & { queryKey: QueryKey } {
   const queryOptions = getListCalculationsQueryOptions(params, options);
+
+  const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & {
+    queryKey: QueryKey;
+  };
+
+  return { ...query, queryKey: queryOptions.queryKey };
+}
+
+/**
+ * Search for foods and get carbohydrate information
+ * @summary Search food database
+ */
+export const getSearchFoodUrl = (params: SearchFoodParams) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? "null" : value.toString());
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0
+    ? `/api/food/search?${stringifiedParams}`
+    : `/api/food/search`;
+};
+
+export const searchFood = async (
+  params: SearchFoodParams,
+  options?: RequestInit,
+): Promise<FoodItem[]> => {
+  return customFetch<FoodItem[]>(getSearchFoodUrl(params), {
+    ...options,
+    method: "GET",
+  });
+};
+
+export const getSearchFoodQueryKey = (params?: SearchFoodParams) => {
+  return [`/api/food/search`, ...(params ? [params] : [])] as const;
+};
+
+export const getSearchFoodQueryOptions = <
+  TData = Awaited<ReturnType<typeof searchFood>>,
+  TError = ErrorType<ErrorResponse>,
+>(
+  params: SearchFoodParams,
+  options?: {
+    query?: UseQueryOptions<
+      Awaited<ReturnType<typeof searchFood>>,
+      TError,
+      TData
+    >;
+    request?: SecondParameter<typeof customFetch>;
+  },
+) => {
+  const { query: queryOptions, request: requestOptions } = options ?? {};
+
+  const queryKey = queryOptions?.queryKey ?? getSearchFoodQueryKey(params);
+
+  const queryFn: QueryFunction<Awaited<ReturnType<typeof searchFood>>> = ({
+    signal,
+  }) => searchFood(params, { signal, ...requestOptions });
+
+  return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
+    Awaited<ReturnType<typeof searchFood>>,
+    TError,
+    TData
+  > & { queryKey: QueryKey };
+};
+
+export type SearchFoodQueryResult = NonNullable<
+  Awaited<ReturnType<typeof searchFood>>
+>;
+export type SearchFoodQueryError = ErrorType<ErrorResponse>;
+
+/**
+ * @summary Search food database
+ */
+
+export function useSearchFood<
+  TData = Awaited<ReturnType<typeof searchFood>>,
+  TError = ErrorType<ErrorResponse>,
+>(
+  params: SearchFoodParams,
+  options?: {
+    query?: UseQueryOptions<
+      Awaited<ReturnType<typeof searchFood>>,
+      TError,
+      TData
+    >;
+    request?: SecondParameter<typeof customFetch>;
+  },
+): UseQueryResult<TData, TError> & { queryKey: QueryKey } {
+  const queryOptions = getSearchFoodQueryOptions(params, options);
 
   const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & {
     queryKey: QueryKey;

@@ -70,6 +70,27 @@ export interface CalculationRecord {
   createdAt: string;
 }
 
+export interface FoodItem {
+  name: string;
+  /** @nullable */
+  brand: string | null;
+  /**
+   * Carbohydrates per 100g
+   * @nullable
+   */
+  carbsPer100g: number | null;
+  /**
+   * Common serving size in grams
+   * @nullable
+   */
+  servingSizeG: number | null;
+  /**
+   * Human-readable serving size label
+   * @nullable
+   */
+  servingSizeLabel: string | null;
+}
+
 export interface CalculationSummary {
   totalCalculations: number;
   /** @nullable */
@@ -84,4 +105,11 @@ export interface CalculationSummary {
 
 export type ListCalculationsParams = {
   limit?: number;
+};
+
+export type SearchFoodParams = {
+  /**
+   * Food search query
+   */
+  q: string;
 };
