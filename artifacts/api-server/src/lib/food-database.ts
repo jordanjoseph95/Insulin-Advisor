@@ -91,6 +91,115 @@ export const BUILTIN_FOODS: BuiltinFood[] = [
   { name: "Naan bread", category: "grain", carbsPer100g: 49, servingSizeG: 90, servingSizeLabel: "1 piece (90g)" },
   { name: "Sushi rice", category: "grain", carbsPer100g: 32, servingSizeG: 150, servingSizeLabel: "1 cup (150g)" },
   { name: "Pad thai", category: "meal", carbsPer100g: 26, servingSizeG: 300, servingSizeLabel: "1 serving (300g)" },
+
+  // More breakfast
+  { name: "French toast (2 slices)", category: "meal", carbsPer100g: 35, servingSizeG: 130, servingSizeLabel: "2 slices (130g)" },
+  { name: "Bagel with cream cheese", category: "meal", carbsPer100g: 43, servingSizeG: 135, servingSizeLabel: "1 bagel + 2 tbsp (135g)" },
+  { name: "Granola with milk", category: "meal", carbsPer100g: 42, servingSizeG: 170, servingSizeLabel: "½ cup granola + milk (170g)" },
+  { name: "Acai bowl", category: "meal", carbsPer100g: 29, servingSizeG: 280, servingSizeLabel: "1 bowl (280g)" },
+  { name: "Smoothie (banana berry)", category: "meal", carbsPer100g: 16, servingSizeG: 350, servingSizeLabel: "1 large (350ml)" },
+  { name: "Avocado toast", category: "meal", carbsPer100g: 27, servingSizeG: 130, servingSizeLabel: "2 slices (130g)" },
+  { name: "Breakfast burrito", category: "meal", carbsPer100g: 28, servingSizeG: 230, servingSizeLabel: "1 burrito (230g)" },
+  { name: "Porridge / oatmeal bowl", category: "meal", carbsPer100g: 12, servingSizeG: 350, servingSizeLabel: "1 bowl (350g)" },
+
+  // Sandwiches & wraps
+  { name: "Ham & cheese sandwich", category: "meal", carbsPer100g: 28, servingSizeG: 175, servingSizeLabel: "1 sandwich (175g)" },
+  { name: "BLT sandwich", category: "meal", carbsPer100g: 25, servingSizeG: 200, servingSizeLabel: "1 sandwich (200g)" },
+  { name: "Chicken wrap", category: "meal", carbsPer100g: 22, servingSizeG: 220, servingSizeLabel: "1 wrap (220g)" },
+  { name: "Tuna melt sandwich", category: "meal", carbsPer100g: 26, servingSizeG: 190, servingSizeLabel: "1 sandwich (190g)" },
+  { name: "Falafel wrap", category: "meal", carbsPer100g: 35, servingSizeG: 200, servingSizeLabel: "1 wrap (200g)" },
+  { name: "Pita bread with hummus", category: "meal", carbsPer100g: 38, servingSizeG: 110, servingSizeLabel: "1 pita + 2 tbsp hummus (110g)" },
+  { name: "Club sandwich", category: "meal", carbsPer100g: 30, servingSizeG: 250, servingSizeLabel: "1 sandwich (250g)" },
+  { name: "Hotdog in bun", category: "meal", carbsPer100g: 28, servingSizeG: 130, servingSizeLabel: "1 hotdog + bun (130g)" },
+  { name: "Sub / hoagie (6 inch)", category: "meal", carbsPer100g: 32, servingSizeG: 230, servingSizeLabel: "6 inch sub (230g)" },
+
+  // Fast food & takeaway
+  { name: "Cheeseburger (fast food)", category: "meal", carbsPer100g: 26, servingSizeG: 240, servingSizeLabel: "1 burger (240g)" },
+  { name: "Chicken nuggets (6pc)", category: "meal", carbsPer100g: 22, servingSizeG: 100, servingSizeLabel: "6 pieces (100g)" },
+  { name: "Fish and chips", category: "meal", carbsPer100g: 28, servingSizeG: 350, servingSizeLabel: "1 serving (350g)" },
+  { name: "Nachos with cheese", category: "meal", carbsPer100g: 52, servingSizeG: 170, servingSizeLabel: "1 serving (170g)" },
+  { name: "Tacos (2 corn, beef)", category: "meal", carbsPer100g: 24, servingSizeG: 170, servingSizeLabel: "2 tacos (170g)" },
+  { name: "Quesadilla (cheese)", category: "meal", carbsPer100g: 34, servingSizeG: 170, servingSizeLabel: "1 quesadilla (170g)" },
+
+  // Italian
+  { name: "Lasagne", category: "meal", carbsPer100g: 14, servingSizeG: 375, servingSizeLabel: "1 serving (375g)" },
+  { name: "Risotto", category: "meal", carbsPer100g: 23, servingSizeG: 300, servingSizeLabel: "1 serving (300g)" },
+  { name: "Gnocchi (cooked)", category: "meal", carbsPer100g: 25, servingSizeG: 250, servingSizeLabel: "1 serving (250g)" },
+  { name: "Minestrone soup", category: "meal", carbsPer100g: 8, servingSizeG: 400, servingSizeLabel: "1 bowl (400ml)" },
+  { name: "Pasta with tomato sauce", category: "meal", carbsPer100g: 22, servingSizeG: 300, servingSizeLabel: "1 serving (300g)" },
+  { name: "Pasta Bolognese", category: "meal", carbsPer100g: 19, servingSizeG: 350, servingSizeLabel: "1 serving (350g)" },
+  { name: "Penne arrabbiata", category: "meal", carbsPer100g: 21, servingSizeG: 300, servingSizeLabel: "1 serving (300g)" },
+  { name: "Garlic bread (slice)", category: "meal", carbsPer100g: 44, servingSizeG: 35, servingSizeLabel: "1 slice (35g)" },
+
+  // Indian
+  { name: "Chicken tikka masala", category: "meal", carbsPer100g: 9, servingSizeG: 300, servingSizeLabel: "1 serving (300g)" },
+  { name: "Dal (lentil curry)", category: "meal", carbsPer100g: 14, servingSizeG: 300, servingSizeLabel: "1 bowl (300g)" },
+  { name: "Biryani (chicken)", category: "meal", carbsPer100g: 23, servingSizeG: 350, servingSizeLabel: "1 serving (350g)" },
+  { name: "Samosa (1 piece)", category: "meal", carbsPer100g: 30, servingSizeG: 60, servingSizeLabel: "1 samosa (60g)" },
+  { name: "Idli (2 pieces)", category: "meal", carbsPer100g: 23, servingSizeG: 100, servingSizeLabel: "2 pieces (100g)" },
+  { name: "Dosa", category: "meal", carbsPer100g: 38, servingSizeG: 120, servingSizeLabel: "1 dosa (120g)" },
+  { name: "Palak paneer", category: "meal", carbsPer100g: 7, servingSizeG: 250, servingSizeLabel: "1 serving (250g)" },
+  { name: "Chana masala", category: "meal", carbsPer100g: 18, servingSizeG: 250, servingSizeLabel: "1 serving (250g)" },
+
+  // Chinese
+  { name: "Fried rice", category: "meal", carbsPer100g: 25, servingSizeG: 250, servingSizeLabel: "1 serving (250g)" },
+  { name: "Chow mein", category: "meal", carbsPer100g: 24, servingSizeG: 250, servingSizeLabel: "1 serving (250g)" },
+  { name: "Spring rolls (2 pieces)", category: "meal", carbsPer100g: 27, servingSizeG: 100, servingSizeLabel: "2 rolls (100g)" },
+  { name: "Dim sum (har gow, 3pc)", category: "meal", carbsPer100g: 22, servingSizeG: 90, servingSizeLabel: "3 pieces (90g)" },
+  { name: "Sweet & sour pork", category: "meal", carbsPer100g: 17, servingSizeG: 250, servingSizeLabel: "1 serving (250g)" },
+  { name: "Wonton soup", category: "meal", carbsPer100g: 9, servingSizeG: 400, servingSizeLabel: "1 bowl (400ml)" },
+  { name: "Dumplings / potstickers (5pc)", category: "meal", carbsPer100g: 26, servingSizeG: 135, servingSizeLabel: "5 pieces (135g)" },
+
+  // Japanese
+  { name: "Sushi roll (6pc maki)", category: "meal", carbsPer100g: 28, servingSizeG: 130, servingSizeLabel: "6 pieces (130g)" },
+  { name: "Ramen (noodle soup)", category: "meal", carbsPer100g: 14, servingSizeG: 500, servingSizeLabel: "1 bowl (500g)" },
+  { name: "Udon noodle soup", category: "meal", carbsPer100g: 16, servingSizeG: 450, servingSizeLabel: "1 bowl (450g)" },
+  { name: "Tonkatsu (fried pork cutlet)", category: "meal", carbsPer100g: 17, servingSizeG: 200, servingSizeLabel: "1 serving (200g)" },
+  { name: "Onigiri / rice ball", category: "meal", carbsPer100g: 32, servingSizeG: 100, servingSizeLabel: "1 onigiri (100g)" },
+  { name: "Gyoza (5 pieces)", category: "meal", carbsPer100g: 22, servingSizeG: 100, servingSizeLabel: "5 pieces (100g)" },
+
+  // Mexican
+  { name: "Enchiladas (2 pieces)", category: "meal", carbsPer100g: 22, servingSizeG: 270, servingSizeLabel: "2 enchiladas (270g)" },
+  { name: "Tamale (1 piece)", category: "meal", carbsPer100g: 26, servingSizeG: 120, servingSizeLabel: "1 tamale (120g)" },
+  { name: "Chips & guacamole", category: "meal", carbsPer100g: 38, servingSizeG: 90, servingSizeLabel: "1 serving (90g)" },
+  { name: "Refried beans", category: "meal", carbsPer100g: 17, servingSizeG: 130, servingSizeLabel: "½ cup (130g)" },
+
+  // Middle Eastern
+  { name: "Falafel (3 pieces)", category: "meal", carbsPer100g: 31, servingSizeG: 90, servingSizeLabel: "3 pieces (90g)" },
+  { name: "Hummus", category: "meal", carbsPer100g: 14, servingSizeG: 60, servingSizeLabel: "¼ cup (60g)" },
+  { name: "Tabbouleh", category: "meal", carbsPer100g: 11, servingSizeG: 150, servingSizeLabel: "1 serving (150g)" },
+  { name: "Shawarma wrap", category: "meal", carbsPer100g: 26, servingSizeG: 260, servingSizeLabel: "1 wrap (260g)" },
+  { name: "Pita bread", category: "grain", carbsPer100g: 55, servingSizeG: 60, servingSizeLabel: "1 pita (60g)" },
+
+  // Soups & stews
+  { name: "Tomato soup", category: "meal", carbsPer100g: 7, servingSizeG: 400, servingSizeLabel: "1 bowl (400ml)" },
+  { name: "Chicken noodle soup", category: "meal", carbsPer100g: 6, servingSizeG: 400, servingSizeLabel: "1 bowl (400ml)" },
+  { name: "Beef stew", category: "meal", carbsPer100g: 10, servingSizeG: 350, servingSizeLabel: "1 bowl (350g)" },
+  { name: "Lentil soup", category: "meal", carbsPer100g: 11, servingSizeG: 400, servingSizeLabel: "1 bowl (400ml)" },
+  { name: "Pumpkin soup", category: "meal", carbsPer100g: 8, servingSizeG: 400, servingSizeLabel: "1 bowl (400ml)" },
+  { name: "Clam chowder", category: "meal", carbsPer100g: 9, servingSizeG: 400, servingSizeLabel: "1 bowl (400ml)" },
+
+  // More dinner dishes
+  { name: "Shepherd's pie", category: "meal", carbsPer100g: 13, servingSizeG: 350, servingSizeLabel: "1 serving (350g)" },
+  { name: "Beef stir-fry with rice", category: "meal", carbsPer100g: 19, servingSizeG: 350, servingSizeLabel: "1 serving (350g)" },
+  { name: "Roast chicken with potatoes", category: "meal", carbsPer100g: 14, servingSizeG: 350, servingSizeLabel: "1 serving (350g)" },
+  { name: "Macaroni & cheese", category: "meal", carbsPer100g: 22, servingSizeG: 250, servingSizeLabel: "1 serving (250g)" },
+  { name: "Fish tacos (2 pieces)", category: "meal", carbsPer100g: 24, servingSizeG: 180, servingSizeLabel: "2 tacos (180g)" },
+  { name: "Baked beans on toast", category: "meal", carbsPer100g: 26, servingSizeG: 280, servingSizeLabel: "1 serving (280g)" },
+  { name: "Cottage pie", category: "meal", carbsPer100g: 11, servingSizeG: 350, servingSizeLabel: "1 serving (350g)" },
+  { name: "Quiche (1 slice)", category: "meal", carbsPer100g: 18, servingSizeG: 120, servingSizeLabel: "1 slice (120g)" },
+
+  // Desserts
+  { name: "Chocolate cake (slice)", category: "dessert", carbsPer100g: 50, servingSizeG: 110, servingSizeLabel: "1 slice (110g)" },
+  { name: "Apple pie (slice)", category: "dessert", carbsPer100g: 38, servingSizeG: 125, servingSizeLabel: "1 slice (125g)" },
+  { name: "Cheesecake (slice)", category: "dessert", carbsPer100g: 32, servingSizeG: 120, servingSizeLabel: "1 slice (120g)" },
+  { name: "Brownie", category: "dessert", carbsPer100g: 55, servingSizeG: 60, servingSizeLabel: "1 piece (60g)" },
+  { name: "Banana bread (slice)", category: "dessert", carbsPer100g: 48, servingSizeG: 60, servingSizeLabel: "1 slice (60g)" },
+  { name: "Scone", category: "dessert", carbsPer100g: 56, servingSizeG: 60, servingSizeLabel: "1 scone (60g)" },
+  { name: "Sorbet", category: "dessert", carbsPer100g: 28, servingSizeG: 120, servingSizeLabel: "½ cup (120g)" },
+  { name: "Jelly / Jell-O", category: "dessert", carbsPer100g: 16, servingSizeG: 140, servingSizeLabel: "½ cup (140g)" },
+  { name: "Custard", category: "dessert", carbsPer100g: 16, servingSizeG: 120, servingSizeLabel: "½ cup (120g)" },
+  { name: "Tiramisu", category: "dessert", carbsPer100g: 28, servingSizeG: 130, servingSizeLabel: "1 slice (130g)" },
 ];
 
 export function searchBuiltinFoods(query: string): BuiltinFood[] {
