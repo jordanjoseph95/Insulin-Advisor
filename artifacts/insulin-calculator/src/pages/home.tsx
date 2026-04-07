@@ -14,7 +14,7 @@ import type { DoseResult } from "@workspace/api-client-react/src/generated/api.s
 
 const formSchema = z.object({
   carbs: z.coerce.number().min(0, "Carbs must be 0 or more"),
-  currentBg: z.coerce.number().min(20, "Please enter a valid BG level"),
+  currentBg: z.coerce.number().min(1, "Please enter a valid BG level"),
 });
 
 export default function HomePage() {
@@ -26,7 +26,7 @@ export default function HomePage() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       carbs: 0,
-      currentBg: 100,
+      currentBg: 5.5,
     },
   });
 
@@ -128,12 +128,13 @@ export default function HomePage() {
                         <FormControl>
                           <Input 
                             type="number" 
-                            inputMode="numeric"
+                            step="0.1"
+                            inputMode="decimal"
                             className="text-3xl font-light h-auto py-2 border-none shadow-none px-0 focus-visible:ring-0 w-24" 
                             {...field} 
                           />
                         </FormControl>
-                        <span className="text-muted-foreground font-medium pb-3">mg/dL</span>
+                        <span className="text-muted-foreground font-medium pb-3">mmol/L</span>
                       </div>
                       <FormMessage />
                     </FormItem>

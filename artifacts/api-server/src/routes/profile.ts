@@ -6,10 +6,10 @@ const router: IRouter = Router();
 
 const MAX_CARB_RATIO = 200;
 const MIN_CARB_RATIO = 1;
-const MAX_CORRECTION_FACTOR = 500;
-const MIN_CORRECTION_FACTOR = 1;
-const MAX_TARGET_BG = 300;
-const MIN_TARGET_BG = 60;
+const MAX_CORRECTION_FACTOR = 15;
+const MIN_CORRECTION_FACTOR = 0.1;
+const MAX_TARGET_BG = 20;
+const MIN_TARGET_BG = 3;
 
 router.get("/profile", async (req, res): Promise<void> => {
   const profiles = await db.select().from(profileTable).limit(1);
@@ -17,7 +17,7 @@ router.get("/profile", async (req, res): Promise<void> => {
   if (profiles.length === 0) {
     const [created] = await db
       .insert(profileTable)
-      .values({ carbRatio: "10", correctionFactor: "50", targetBg: "100" })
+      .values({ carbRatio: "10", correctionFactor: "2.5", targetBg: "5.5" })
       .returning();
     res.json({
       id: created.id,

@@ -7,8 +7,8 @@ const router: IRouter = Router();
 
 const MAX_DOSE = 30;
 const MAX_CARBS = 500;
-const MAX_BG = 600;
-const MIN_BG = 20;
+const MAX_BG = 33;
+const MIN_BG = 1;
 
 router.post("/calculate", async (req, res): Promise<void> => {
   const parsed = CalculateDoseBody.safeParse(req.body);
@@ -33,7 +33,7 @@ router.post("/calculate", async (req, res): Promise<void> => {
   if (profiles.length === 0) {
     const [created] = await db
       .insert(profileTable)
-      .values({ carbRatio: "10", correctionFactor: "50", targetBg: "100" })
+      .values({ carbRatio: "10", correctionFactor: "2.5", targetBg: "5.5" })
       .returning();
     profile = created;
   } else {

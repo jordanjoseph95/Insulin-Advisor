@@ -14,8 +14,8 @@ import { useEffect } from "react";
 
 const profileSchema = z.object({
   carbRatio: z.coerce.number().min(1, "Must be at least 1"),
-  correctionFactor: z.coerce.number().min(1, "Must be at least 1"),
-  targetBg: z.coerce.number().min(70, "Must be at least 70"),
+  correctionFactor: z.coerce.number().min(0.1, "Must be at least 0.1"),
+  targetBg: z.coerce.number().min(3, "Must be at least 3.0 mmol/L"),
 });
 
 export default function ProfilePage() {
@@ -28,8 +28,8 @@ export default function ProfilePage() {
     resolver: zodResolver(profileSchema),
     defaultValues: {
       carbRatio: 10,
-      correctionFactor: 50,
-      targetBg: 100,
+      correctionFactor: 2.5,
+      targetBg: 5.5,
     },
   });
 
@@ -122,7 +122,7 @@ export default function ProfilePage() {
                     <FormControl>
                       <Input type="number" inputMode="decimal" className="w-24 text-lg" {...field} />
                     </FormControl>
-                    <span className="text-muted-foreground">mg/dL / unit</span>
+                    <span className="text-muted-foreground">mmol/L / unit</span>
                   </div>
                   <FormMessage />
                 </FormItem>
@@ -142,9 +142,9 @@ export default function ProfilePage() {
                   </FormDescription>
                   <div className="flex items-center gap-3">
                     <FormControl>
-                      <Input type="number" inputMode="numeric" className="w-24 text-lg" {...field} />
+                      <Input type="number" step="0.1" inputMode="decimal" className="w-24 text-lg" {...field} />
                     </FormControl>
-                    <span className="text-muted-foreground">mg/dL</span>
+                    <span className="text-muted-foreground">mmol/L</span>
                   </div>
                   <FormMessage />
                 </FormItem>
