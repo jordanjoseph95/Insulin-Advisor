@@ -1,8 +1,11 @@
 import { Link, useLocation } from "wouter";
-import { Activity, History, Settings } from "lucide-react";
+import { Activity, History, Settings, Moon, Sun } from "lucide-react";
+import { useDarkMode } from "@/hooks/use-dark-mode";
+import { Button } from "@/components/ui/button";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const [location] = useLocation();
+  const { dark, toggle } = useDarkMode();
 
   const navItems = [
     { href: "/", label: "Calculator", icon: Activity },
@@ -18,6 +21,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <Activity className="h-5 w-5" />
             <span>Insulin Dose</span>
           </div>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={toggle}
+            aria-label={dark ? "Switch to light mode" : "Switch to night mode"}
+            className="text-muted-foreground hover:text-foreground"
+          >
+            {dark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+          </Button>
         </div>
       </header>
 
