@@ -60,7 +60,7 @@ export default function HomePage() {
     <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
       
       {result ? (
-        <Card className="overflow-hidden border-none shadow-lg bg-white relative">
+        <Card className="overflow-hidden border-none shadow-lg bg-card relative">
           <div className="absolute top-0 left-0 w-full h-1 bg-primary" />
           <div className="p-6">
             <div className="text-center mb-6">
@@ -88,8 +88,8 @@ export default function HomePage() {
             </div>
 
             {result.isCapped && (
-              <div className="mt-4 flex items-start gap-2 p-3 bg-orange-50 text-orange-800 rounded-lg text-sm">
-                <AlertTriangle className="h-5 w-5 shrink-0 mt-0.5 text-orange-600" />
+              <div className="mt-4 flex items-start gap-2 p-3 bg-destructive/10 text-destructive rounded-lg text-sm">
+                <AlertTriangle className="h-5 w-5 shrink-0 mt-0.5 text-destructive" />
                 <p>Safety limit reached. Dose was capped at 30 units.</p>
               </div>
             )}
@@ -120,7 +120,7 @@ export default function HomePage() {
                   control={form.control}
                   name="currentBg"
                   render={({ field }) => (
-                    <FormItem className="p-4 bg-white rounded-[10px] shadow-sm mb-1">
+                    <FormItem className="p-4 bg-card rounded-[10px] shadow-sm mb-1">
                       <FormLabel className="text-muted-foreground flex items-center gap-2">
                         <Droplets className="h-4 w-4" />
                         Current Blood Glucose
@@ -146,7 +146,7 @@ export default function HomePage() {
                   control={form.control}
                   name="carbs"
                   render={({ field }) => (
-                    <FormItem className="p-4 bg-white rounded-[10px] shadow-sm">
+                    <FormItem className="p-4 bg-card rounded-[10px] shadow-sm">
                       <FormLabel className="text-muted-foreground flex items-center gap-2">
                         <Utensils className="h-4 w-4" />
                         Carbs to Eat
